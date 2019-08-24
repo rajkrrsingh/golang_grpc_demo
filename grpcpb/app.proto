@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package  golang_grpc_demo;
+
+option go_package="grpcpb";
+
+message GetServerInfoRequest {
+
+}
+
+message GetServerResponse {
+    string hostname = 1;
+    string currentservertime = 2;
+}
+
+
+service ServerInfo {
+    rpc getServerInfo(GetServerInfoRequest) returns (GetServerResponse) {}
+}
